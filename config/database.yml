@@ -1,0 +1,25 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+  
+
+development:
+  <<: *default
+  database: chatchat_development
+
+
+
+test:
+  <<: *default
+  database: chatchat_test
+
+
+production:
+  <<: *default
+  database: chatchat_production
+  username: chatchat
+  password: <%= ENV['CHATCHAT_DATABASE_PASSWORD'] %>

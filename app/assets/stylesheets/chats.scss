@@ -1,0 +1,54 @@
+
+.header{
+  background-color: #5ebfff;
+  height: 50px;
+}
+
+.top_menu li {
+  float: left;
+  padding: 15px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.top_li{
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.edit_button{
+  color: #18ffd1;
+  text-decoration: none;
+}
+
+.delete_button{
+  color: red;
+  text-decoration: none;
+}
+
+.footer{
+  background-color: #5ebfff;
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0px 0px 0px 500px;
+}

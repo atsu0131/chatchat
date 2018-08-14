@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>chatchat</title>
+  </head>
+  <body>
+    <h2>つぶやき一覧</h2>
+    <p><%= notice %></p>
+    <table>
+      <% @chats.each do |chat| %>
+      <tr>
+        <td><%= chat.content %></td>
+      </tr>
+      <tr>
+        <td><%= link_to '編集',edit_chat_path(chat.id) , data: { confirm: '本当に編集していいですか？' } ,class: "edit_button"%></td>
+        <td><%= link_to '削除',chat_path(chat.id),method: :delete , data: { confirm: '本当に削除していいですか？',class: "delete_button" } %></td>
+      </tr>
+      <% end %>
+    </table>
+    </div>
+    
+
+  </body>
+</html>

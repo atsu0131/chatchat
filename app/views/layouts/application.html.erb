@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatchat</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class = "header">
+          <ul class="top_menu">
+              <li><%= link_to 'HOME', tops_path, class: "top_li" %></li>
+              <li><%= link_to 'つぶやき一覧', chats_path, class: "top_li" %></li>
+              <li><%= link_to '新規投稿', new_chat_path, class: "top_li" %></li> 
+          </ul>
+      </div>
+    </header>
+    </div>
+    <div class = "content">
+    <%= yield %>
+    </div>
+    <footer>
+      <div class = "footer">
+        <p>dive into code</p>
+      </div>
+    </footer>
+  </body>
+</html>
