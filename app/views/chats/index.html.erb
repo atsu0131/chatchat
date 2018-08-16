@@ -13,13 +13,13 @@
         <td><%= chat.content %></td>
       </tr>
       <tr>
-        <td><%= link_to '編集',edit_chat_path(chat.id) , data: { confirm: '本当に編集していいですか？' } ,class: "edit_button"%></td>
-        <td><%= link_to '削除',chat_path(chat.id),method: :delete , data: { confirm: '本当に削除していいですか？',class: "delete_button" } %></td>
+        <td><%= link_to '編集',edit_chat_path(chat.id) , data: { confirm: '本当に編集していいですか？' } ,class: "btn btn-info"%></td>
+        <td><%= link_to '削除',chat_path(chat.id),method: :delete , data: { confirm: '本当に削除していいですか？'},class:"btn btn-danger" %></td>
       </tr>
       <% end %>
     </table>
     </div>
-    
+
 
   </body>
 </html>

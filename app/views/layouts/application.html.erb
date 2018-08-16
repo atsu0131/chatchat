@@ -12,16 +12,29 @@
     <header>
       <div class = "header">
           <ul class="top_menu">
-              <li><%= link_to 'HOME', tops_path, class: "top_li" %></li>
-              <li><%= link_to 'つぶやき一覧', chats_path, class: "top_li" %></li>
-              <li><%= link_to '新規投稿', new_chat_path, class: "top_li" %></li> 
+              <% if logged_in? %>
+                <li><%= link_to 'HOME', tops_path, class: "top_li" %></li>
+                <li><%= link_to 'つぶやき一覧', chats_path, class: "top_li" %></li>
+                <li><%= link_to '新規投稿', new_chat_path, class: "top_li" %></li>
+                <li><%= link_to "Profile", user_path(current_user.id), class: "top_li" %></li>
+                <li><%= link_to "Logout", session_path(current_user.id), method: :delete,class: "top_li"  %></li>
+              <% else %>
+                <li><%= link_to "Sign up", new_user_path, class: "top_li"  %></li>
+                <li><%= link_to "Login", new_session_path, class: "top_li"  %></li>
+              <% end %>
           </ul>
       </div>
     </header>
     </div>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+
+
     <div class = "content">
     <%= yield %>
     </div>
+
     <footer>
       <div class = "footer">
         <p>dive into code</p>
