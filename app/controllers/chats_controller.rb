@@ -47,6 +47,7 @@ class ChatsController < ApplicationController
   end
 
   private
+  
   def set_chat
     params.require(:chat).permit(:content)
   end
