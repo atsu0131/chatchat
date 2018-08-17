@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
+  root 'tops#index'
   resources :sessions, only: [:new, :create, :destroy,:show ]
   resources :users
-
-
-  root 'tops#index'
 
   resources :chats do
     collection do
