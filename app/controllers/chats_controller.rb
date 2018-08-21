@@ -14,12 +14,19 @@ class ChatsController < ApplicationController
   end
 
   def create
-    Chat.create(set_chat)
-    redirect_to new_chat_path
+    @chat = Chat.new(set_chat)
+    @chat.user_id = current_user.id
+    if @chat.save
+      redirect_to new_chat_path
+    else
+      redirect_to new_chat_path
+    end
   end
 
   def show
     @chat = Chat.find(params[:id])
+    @favorite = current_user.favorites.find_by(chat_id:@chat.id)
+
   end
 
   def edit
@@ -43,11 +50,12 @@ class ChatsController < ApplicationController
 
   def confirm
     @chat = Chat.new(set_chat)
+    @chat.user_id = current_user.id
      render :new if @chat.invalid?
   end
 
   private
-  
+
   def set_chat
     params.require(:chat).permit(:content)
   end
