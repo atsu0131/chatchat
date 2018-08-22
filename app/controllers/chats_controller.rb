@@ -31,6 +31,9 @@ class ChatsController < ApplicationController
 
   def edit
     @chat = Chat.find(params[:id])
+    unless @chat.user_id == current_user.id
+      redirect_to chats_path
+    end
   end
 
   def update
@@ -44,8 +47,10 @@ class ChatsController < ApplicationController
 
   def destroy
     @chat = Chat.find(params[:id])
-    @chat.destroy
-    redirect_to chats_path, notice:"ブログを削除しました！"
+    if @chat.user_id == current_user.id
+      @chat.destroy
+      redirect_to chats_path, notice:"ブログを削除しました！"
+    end
   end
 
   def confirm
