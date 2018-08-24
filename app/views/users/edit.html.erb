@@ -1,0 +1,23 @@
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control"  %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control"   %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: "form-control"   %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: "form-control"   %>
+
+<div class="field">
+  <%= f.label :image_icon %>
+  <%= f.file_field :image_icon, id: :user_image %>
+</div>
+<div class="field">
+  <%= f.label :画像を削除する %>
+  <span><%= f.check_box :remove_image_icon %></span>
+</div>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>

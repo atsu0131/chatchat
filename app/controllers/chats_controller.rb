@@ -63,7 +63,7 @@ class ChatsController < ApplicationController
   private
 
   def set_chat
-    params.require(:chat).permit(:content)
+    params.require(:chat).permit(:content, :image, :image_cache)
   end
 
 end

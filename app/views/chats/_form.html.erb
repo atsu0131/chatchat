@@ -14,6 +14,11 @@
   <div class ="chat_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@chat.image.url) if @chat.image.url %>
+    <%= form.file_field :image, id: :chat_image %>
+  </div>
     <%= form.submit class: "btn btn-primary"%>
 <% end %>
   </div>

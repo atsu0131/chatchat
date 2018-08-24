@@ -2,6 +2,10 @@
 
 <%= form_with(model: @chat, url: chats_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
+  <%= image_tag(@chat.image) %>
+  <%= form.hidden_field :image_cache %>
+
+
 
   <p>本文:<%= @chat.content %></p>
   <%= form.submit  "登録する" ,class: "btn btn-primary"%>

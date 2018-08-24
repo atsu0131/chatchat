@@ -1,6 +1,12 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+<p>
+  <strong>アイコン:</strong>
+  <%= image_tag @user.image_icon %>
+</p>
+
+<%= link_to '編集', edit_user_path %>
 
 <p>お気に入り一覧</p>
 <% @favorites_chats.each do |favorite| %>
