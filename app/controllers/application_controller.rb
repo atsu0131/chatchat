@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
     def require_user_logged_in
       unless logged_in?
-      flash[:notice] = "権限がありません"
       redirect_to("/sessions/new")
       end
     end

@@ -18,7 +18,7 @@ class ChatsController < ApplicationController
     @chat.user_id = current_user.id
     if @chat.save
       ChatMailer.chat_mail(@chat).deliver
-      redirect_to new_chat_path
+      redirect_to chats_path
     else
       redirect_to new_chat_path
     end

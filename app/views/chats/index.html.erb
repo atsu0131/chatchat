@@ -10,7 +10,7 @@
     <table>
       <% @chats.each do |chat| %>
       <tr>
-        <td><%= chat.content %></td>
+        <td><%= image_tag chat.user.image_icon %><%= chat.content %></td>
       </tr>
       <tr>
         <td><%= link_to '詳細',chat_path(chat.id), class: "btn btn-info"%></td>

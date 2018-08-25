@@ -24,5 +24,8 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control"   %>
 
+  <%= f.label :image_icon %>
+  <%= f.file_field :image_icon, id: :user_image %>
+
   <%= f.submit "Create my account" ,class: "btn btn-primary"%>
 <% end %>
